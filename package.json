@@ -1,0 +1,15 @@
+{
+  "name": "DevOpsNotes",
+  "version": "1.0.0",
+  "description": "The Notes for Solent's New Third-year DevOps Course",
+  "main": "index.js",
+  "repository": "git@github.com:joeappleton18/dev-ops-notes.git",
+  "author": "Joe Appleton",
+  "scripts": {
+    "dev": "vuepress dev .",
+    "build": "vuepress build ."
+  },
+  "devDependencies": {
+    "vuepress": "^1.9.7"
+  }
+}
