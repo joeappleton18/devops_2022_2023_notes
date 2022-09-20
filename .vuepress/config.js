@@ -12,7 +12,7 @@ module.exports = {
       {
         title: 'Assessments',   // required
         collapsable: false,
-        children: ["/assessment/"]
+        children: ["/assessment/", "/assessment/scenario"]
       },
     ]
   }
