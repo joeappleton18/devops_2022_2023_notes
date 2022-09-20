@@ -14,6 +14,10 @@ module.exports = {
         collapsable: false,
         children: ["/assessment/", "/assessment/scenario"]
       },
+      {
+        title: 'Side Tutorials',
+        children: ["/side-tutorials/", "/side-tutorials/1.creating-a-next-and-tail-wind-application.md"],
+      }
     ]
   }
 }
