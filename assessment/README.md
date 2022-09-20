@@ -29,11 +29,11 @@ If you have 10-minutes free, please take the time to watch the assessment overvi
 
 Each team should submit a report demonstrating and justifying the work that has taken place to solve the assessment scenario. The report will be submitted as a single, pdf exported, markdown document. 
 
-**[Assessment Brief](/assessment_1_project_report_brief.pdf)**
+**[Assessment Brief](/devops_2022_2023_notes/assessment_1_project_report_brief.pdf)**
 
 ### Presentation (Friday 20th January 2023 4.00pm)
 
 This assessment requires your team to create a screencast demonstrating your solution to the project scenario. 
 
-**[Assessment Brief](/assessment_2_presentation_brief.pdf)**
+**[Assessment Brief](/devops_2022_2023_notes/assessment_2_presentation_brief.pdf)**
 
