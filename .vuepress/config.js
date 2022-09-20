@@ -3,19 +3,16 @@ module.exports = {
   dest: "docs",
   themeConfig: {
     sidebar: [
+
       {
-        title: "Overview",
+        title: "Module Overview",
         collapsable: false,
         children: ["/"],
       },
       {
         title: 'Assessments',   // required
-        collapsable: true,
-        sidebarDepth: 1,    // optional, defaults to 1
-        children: [
-          '/assessment/scenario',
-          
-        ]
+        collapsable: false,
+        children: ["/assessment/"]
       },
     ]
   }
