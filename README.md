@@ -48,5 +48,7 @@ Should you engage with the module material and the assessments, by the end of th
 - Communicate and collaborate to deliver a non-trivial, web-based project. 
 - Critically reflect on the DevOps process
 
+## Course content
 
-
+- [You can find the GitHub repository hosting these notes here](https://github.com/joeappleton18/devops_2022_2023_notes)
+- [You can find the hosted version of these notes here](https://joeappleton18.github.io/devops_2022_2023_notes/)
