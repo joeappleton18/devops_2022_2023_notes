@@ -17,6 +17,11 @@ module.exports = {
       {
         title: 'Side Tutorials',
         children: ["/side-tutorials/", "/side-tutorials/1.creating-a-next-and-tail-wind-application.md"],
+      },
+
+      {
+        title: 'Week 1',
+        children: ["/week-1/lecture", "/week-1/"]
       }
     ]
   }
