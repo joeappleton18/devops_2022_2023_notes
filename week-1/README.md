@@ -10,7 +10,8 @@ This week, we will address the following questions:
 
 ## Lesson Dependencies
 
-- [Git installed](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
+- [You will need to ensure you have the version control tool Git installed](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
+- While you can use any text editor for this session, I recommend that you install [VS Code](https://code.visualstudio.com/download)
 
 
 
