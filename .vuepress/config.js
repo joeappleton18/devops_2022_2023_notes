@@ -1,6 +1,9 @@
 module.exports = {
   base: "/devops_2022_2023_notes/",
   dest: "docs",
+  markdown: {
+    lineNumbers: true
+  },
   themeConfig: {
     sidebar: [
 
@@ -25,7 +28,7 @@ module.exports = {
       },
       {
         title: 'Week 2',
-        children: ["/week-2/lecture"]
+        children: ["/week-2/lecture", "/week-2/"]
       }
     ]
   }
