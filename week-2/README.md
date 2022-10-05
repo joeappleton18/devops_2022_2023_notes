@@ -1,5 +1,9 @@
 # Week 2: Static Code Analysis
 
+![](./ci-pipeline.png)
+
+> > This is the full continuous integration pipeline we will be setting up. This week, we are looking at the first part: static analysis.
+
 So it has begun: this week, we are starting to build our continuous integration pipeline (CI). We will begin this journey by leaping into static code analysis and code formatting.
 
 ::: tip DEFINITION
@@ -66,7 +70,7 @@ This is not a deep dive into learning TypeScript; rather, we are just going to b
 :::
 
 ::: tip DEFINITION
-:book: **Code Formatting**
+:book: **Type Script**
 According to its creators, TypeScript adds additional syntax to JavaScript to support a tighter integration with your editor. Catch errors early in your editor.
 :::
 
@@ -399,8 +403,7 @@ If you've got this far, you've come a long way: give yourself a pat on the back.
   	...
   ```
 
-  > > > `package.json`:
-  > > > :::
+  > > > `package.json`: updated rules
 
 - Finally, tell Husky which scripts to run in the `.husky/pre-commit` file. Your file should resemble the below:
 
@@ -418,8 +421,7 @@ npm run lint
 ```
 
 - Now, when you make a commit the above checks should run. If they fail, your code won't be committed.
-:::
-
+  :::
 
 ## Further Reading
 
