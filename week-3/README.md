@@ -116,8 +116,8 @@ If you've got this far, you've come a long way: give yourself a pat on the back.
 
 ::: warning TASK 5: Install Husky
 
-- npx husky-init 
--  npm install
+- npx husky-init
+- npm install
 - Next, we need to set up some scripts in our package.json file, these will run on each commit:
 
   ```json
@@ -147,9 +147,10 @@ npm run lint
 ```
 
 - Now, when you make a commit the above checks should run. If they fail, your code won't be committed.
-  :::
 
-## GitHub Workflows
+:::
+
+## GitHub Workflows
 
 A recent addition to GitHub is something known as workflows.
 
@@ -159,14 +160,14 @@ This is a very exciting prospect; we can use workflows to automate repetitive jo
 
 ## Task 3: Our First Workflow
 
-::: tip Important Point
+::: tip
 :star:
 
 If you can't push and you are sure you are the only one working on branch you can use: ` git push origin <branch-name> --force`
 
 :::
 
-:: warning TASK 5: Our First Workflow
+::: warning TASK 5: Our First Workflow
 
 Let's create a workflow that will check the quality of code being committed to our remote repository.
 
@@ -235,7 +236,7 @@ jobs:
 
 :::
 
-## Task 4: Our First Workflow
+## Task 4: Home Study
 
 Using what you have learnt so far:
 
@@ -250,10 +251,10 @@ Create a starter Next.js project, and enforce coding standards and type checking
 
 - [The TypeScript Hand Book, well worth flicking through∫](https://www.typescriptlang.org/docs/handbook/intro.html)
 
-## Code Formatting and Linting
+### Code Formatting and Linting
 
 - [Check out all the formatting rules you can use for prettier](https://prettier.io/playground/)
 
-## GitHub Workflows
+### GitHub Workflows
 
 - [GitHub Workflows](https://docs.github.com/en/actions/using-workflows/about-workflows)
