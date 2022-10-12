@@ -93,7 +93,7 @@ Let's get going with prettier awesomeness:
 
 > > .vscode/settings.json: these are what my final settings look like
 
-- Finally, in your route directory create the following two files: `.prettierignore` and ` .prettierrc.json`. `.prettierrc.json` allows us to add custom rules, let's add the following:
+- Finally, in your root directory create the following two files: `.prettierignore` and ` .prettierrc.json`. `.prettierrc.json` allows us to add custom rules, let's add the following:
 
 ```json
 {
