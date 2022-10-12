@@ -116,8 +116,9 @@ If you've got this far, you've come a long way: give yourself a pat on the back.
 
 ::: warning TASK 5: Install Husky
 
-- npx husky-init && npm install
-- Next, we need to set up some scripts in our package.json file, these will run on each commit
+- npx husky-init 
+-  npm install
+- Next, we need to set up some scripts in our package.json file, these will run on each commit:
 
   ```json
 
@@ -176,7 +177,7 @@ Let's create a workflow that will check the quality of code being committed to o
 
 ```yaml
 name: Checking Code Quality
-on: ["push", "pull"] ## run on push and pulls
+on: ["push", "pull_request"] ## run on push and pulls
 jobs:
   eslint:
     name: Run Code Quality Static Checks ## the name of our job
@@ -212,7 +213,7 @@ jobs:
 ![](./actions.png)
 
 1. Can you expand `main.yaml` to also check types and run prettier?
-2. Check out a new branch push to the remote and raise a pull request you should get a detailed report on the status of the jobs that have run.
+2. Check out a new branch, push to the remote repository, and raise a pull request: you should get a detailed report on the status of the jobs that have run.
 3. **Bonus Task:** [GitHub actions has a marketplace of actions we can use](https://github.com/marketplace?type=actions). Can you use the marketplace to create a new job that does something interesting. [This project management example sparked my interest](https://docs.github.com/en/actions/managing-issues-and-pull-requests/moving-assigned-issues-on-project-boards). [You can also do things like update discord on a pull request](https://github.com/marketplace/actions/discord-message-notify)
 
 :::
