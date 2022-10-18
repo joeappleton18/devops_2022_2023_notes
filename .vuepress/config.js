@@ -19,7 +19,10 @@ module.exports = {
       },
       {
         title: 'Side Tutorials',
-        children: ["/side-tutorials/", "/side-tutorials/1.creating-a-next-and-tail-wind-application.md", "/side-tutorials/2.react-state.md"],
+        children: ["/side-tutorials/",
+          "/side-tutorials/1.creating-a-next-and-tail-wind-application.md",
+          "/side-tutorials/2.react-state.md",
+          "/side-tutorials/3.connecting-to-a-database.md"],
       },
 
       {
@@ -33,6 +36,11 @@ module.exports = {
       {
         title: 'Week 3',
         children: ["/week-3/lecture", "/week-3/"]
+      },
+      {
+       
+        title: 'Week 4',
+        children: ["/week-4/lecture", "/week-4/"]
       }
     ]
   }
