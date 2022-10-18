@@ -1,4 +1,4 @@
-# Week 2: Static Code Analysis (ii)
+# Week 3: Static Code Analysis (ii)
 
 ![](./ci-pipeline.png)
 
