@@ -29,7 +29,7 @@ In your command line shell, run:
 git clone --branch week-4-starter-code https://github.com/joeappleton18/solent-room-finder.git solent-room-finder-week-4
 ```
 
-- Follow the instructions in the cloned project's readme to set up the project.
+- Follow the instructions in the cloned project's `README.md` to set up your development version of the Solent Room Finder.
 
 :::
 
@@ -54,7 +54,7 @@ Often, at university (particularly at Solent), we focus too much on tools, forge
 
 ::: warning TASK 1: Considering What Software Development Is
 
-With the above in mind, let's consider further what we are trying to achieve for the assessment scenario. Yes, we are making an application to share recipes, however:
+With the above in mind, let's consider further what we are trying to achieve for the [assessment scenario](./../assessment/scenario.md). Yes, we are making an application to share recipes, however:
 
 - What is the end user trying to achieve through interacting with your application? You may find it useful to narrow the application down (e.g., recipes for students, recipes for fitness)?
 
@@ -70,9 +70,7 @@ CDD is well aligned with the definition, sketched out above, of the purpose of s
 
 > > CDD allows us to treat our application as a puzzle. (image source: [https://www.componentdriven.org/](https://www.componentdriven.org/)
 
-CDD is well aligned with the definition, sketched out above, of the purpose of software development: solving problems for the end user through the iterative experimentation of new concepts and ideas.
-
-According to [componentdriven](https://www.componentdriven.org/), Components are standardized, interchangeable building blocks of UIs. They encapsulate the appearance and function of UI pieces. Think LEGO bricks. LEGOs can be used to build everything from castles to spaceships; components can be taken apart and used to create new features.
+According to [componentdriven](https://www.componentdriven.org/), "components are standardized, interchangeable building blocks of UIs. They encapsulate the appearance and function of UI pieces. Think LEGO bricks. LEGOs can be used to build everything from castles to spaceships; components can be taken apart and used to create new features".
 
 Using components, we can quickly reconfigure and test how our application works. **However, this idea depends on the premise that components can be easily discovered and used, often this is not the case**!
 
@@ -90,8 +88,7 @@ Storybook solves the problem of component reuse and discoverability. It is an op
 
 Storybook lives alongside an existing project. It allows us to create living documentation that updates in line with our project!
 
-https://storybook.js.org/docs/react/get-started/install
-To install story book, run the following command:
+[To install story book, run the following command:](https://storybook.js.org/docs/react/get-started/install)
 
 - `npx storybook init`
 
@@ -236,17 +233,27 @@ ButtonNoIcon.args = {...Primary.args, icon: null};
 
 - To see your story, re-run storybook: CRTL/CMD-C to stop the storybook process and then `npm run storybook`
 
-**\* Bonus Section**
+
+**Bonus Section**
 
 ![](./breadcrumb.png)
 
 - Notice how we have a breadcrumb type thing (see above) when we navigate to a given room (click on the room table to get to a room). Currently this is not it's own component, and I feel like we could use it in other places in our application (e.g. when we create a room). Can you extract it from `src/pages/rooms/[id]/index.tsx` as a component and write a story for it?
 
+![](./alert.png)
+
+>> [You can use the CSS classes provided by Tailwind to get started with your alert](https://v1.tailwindcss.com/components/alerts)
+
+- Can you make an alert component and writ stories for it:
+    - I should be able to set the alert label 
+    - I should be able to choose the alert type: "error" or "success"
+    - I should be able to close the alert 
+    - After a dynamically chose period of time it should fade out (advanced task)
 :::
 
 ## Task 4 (this may be work from home): Integrating with Our CI/CD process
 
-You're probably thinking: would it not be nice to have a hosted version of this style guide? I could share it with Joe and my close family and friends. Well! We can write a GitHub action that builds our stories and hosts them on GitHub pages whenever we push to a given branch!
+You're probably thinking: would it not be nice to have a hosted version of my stories? I could share it with Joe and my close family and friends. Well! We can write a GitHub action that builds our stories and hosts them on GitHub pages whenever we push to a given branch!
 
 Let's consider how we might achieve this:
 
@@ -297,4 +304,6 @@ jobs:
 
 ## Further Reading
 
-
+- [Design Thinking: for an insight into how to solve complex unfamiliar problems](https://www.interaction-design.org/literature/article/what-is-design-thinking-and-why-is-it-so-popular)
+- [A very quick read on CDD](https://www.componentdriven.org/)]
+- [Follow this Storybook tutorial](https://storybook.js.org/tutorials/intro-to-storybook/)
