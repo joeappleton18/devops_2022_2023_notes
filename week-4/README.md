@@ -82,6 +82,27 @@ Using components, we can quickly reconfigure and test how our application works.
 
 Storybook solves the problem of component reuse and discoverability. It is an open-source UI tool for building components in isolation. In summary, it allows you to create, test, and document your application's components.
 
+
+
+::: tip Important Point
+:star:
+
+![](./error-image.png)
+
+A few people have been getting a: cannot find module `webpack/lib/util/makeSerializable.js` error. To fix this, add the following to `.storybook/main.js`
+
+```js
+...
+module.exports = {
+typescript: {reactDocgen: false}
+...
+}
+
+```
+>> .storybook/main.js
+
+:::
+
 ## TASK 2: Getting Started With Story Book
 
 ::: warning TASK 2: Getting Started With Storybook
@@ -269,7 +290,24 @@ Let's consider how we might achieve this:
 
 3. Next, enable GitHub pages on your repository's settings. You'll want to select the branch to build from (for me this was `week-4-solutions`; for you, it will probably be `week-4-starter-code`). Next, select `docs` as your hosting folder.
 
-4. Finally, create `.github/workflows/storybook.yaml` and add the below code: **ensure you update the branch name**
+4. Create a new build script for storybook. In `.package.json`, append the following to the scripts section: 
+
+```js 
+...
+
+"scripts": {
+    ...
+    "build-storybook": "build-storybook -o docs-build",
+    ...
+},
+
+....
+
+```
+>> package.json, the above script outputs your storybook as a static website into a docs-build folder. 
+
+
+5. Create `.github/workflows/storybook.yaml` and add the below code: **ensure you update the branch name**
 
 ```yaml
 name: Deploy Story Book
@@ -297,6 +335,9 @@ jobs:
 ```
 
 > > `.github/workflows/storybook.yaml`
+
+
+
 
 - Commit and push to the remote.
 - Check the actions tab on your repo to see if the build was successful.
