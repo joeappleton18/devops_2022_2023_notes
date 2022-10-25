@@ -41,6 +41,11 @@ module.exports = {
        
         title: 'Week 4',
         children: ["/week-4/lecture", "/week-4/"]
+      },
+      {
+
+        title: 'Week 5',
+        children: ["/week-5/lecture", "/week-5/"]
       }
     ]
   }
