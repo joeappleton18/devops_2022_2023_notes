@@ -1,5 +1,7 @@
 # Week 5: Introduction to Testing
 
+![](./ci-pipeline_testing.png)
+
 Welcome Welcome to week five. This week promises to be interesting: we are going to be expanding our CI pipeline by beginning to add automated tests to our room finder application.
 
 Throughout this week, we will be addressing the following questions:
@@ -292,7 +294,7 @@ export {};
    1. [Can you also add support for typescript](https://react-hook-form.com/get-started#typescript)
 
 2. Finally, test your newly added functionality. Create a new spec: `cypress/e2e/create-cy.ts`, and add tests that check your create page:
-   1. prevents a in-valid value from from being submitted
+   1. prevents not valid forms from being submitted
    2. Shows and removes errors when correct or incorrect values are entered
 
 :::
