@@ -22,7 +22,8 @@ module.exports = {
         children: ["/side-tutorials/",
           "/side-tutorials/1.creating-a-next-and-tail-wind-application.md",
           "/side-tutorials/2.react-state.md",
-          "/side-tutorials/3.connecting-to-a-database.md"],
+          "/side-tutorials/3.connecting-to-a-database.md",
+          "/side-tutorials/4.mutating-a-database.md"]
       },
 
       {
@@ -38,7 +39,7 @@ module.exports = {
         children: ["/week-3/lecture", "/week-3/"]
       },
       {
-       
+
         title: 'Week 4',
         children: ["/week-4/lecture", "/week-4/"]
       },
@@ -46,7 +47,12 @@ module.exports = {
 
         title: 'Week 5',
         children: ["/week-5/lecture", "/week-5/"]
-      }
+      },
+      // {
+
+      //   title: 'Week 6',
+      //   children: ["/week-6/lecture", "/week-6/"]
+      // }
     ]
   }
 }
