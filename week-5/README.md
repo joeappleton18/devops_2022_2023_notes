@@ -10,11 +10,14 @@ Throughout this week, we will be addressing the following questions:
 2. How can I create user focused tests?
 3. How can I start to develop a testing strategy for my own applications?
 
-# Lesson Dependencies 🔨
+## Lesson Dependencies 🔨
 
 - [You will need to ensure you have the version control tool Git installed](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
   - You'll need to know the basic Git Commands (e.g., `checkout -b`, `push`, and `commit`)
 - While you can use any text editor for this session, I recommend that you install [VS Code](https://code.visualstudio.com/download)
+- You will need access to a MongDB database.
+  -  You can install your own locally
+  -  Use [AtlasDB](https://www.mongodb.com/atlas/database)
 
 ## TASK 0: Get the Starter Application
 

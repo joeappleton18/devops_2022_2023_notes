@@ -48,11 +48,11 @@ module.exports = {
         title: 'Week 5',
         children: ["/week-5/lecture", "/week-5/"]
       },
-      // {
+      {
 
-      //   title: 'Week 6',
-      //   children: ["/week-6/lecture", "/week-6/"]
-      // }
+        title: 'Week 6',
+        children: ["/week-6/lecture", "/week-6/"]
+      }
     ]
   }
 }
