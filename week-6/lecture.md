@@ -1,4 +1,6 @@
-# Managing Database in a CI/CD Environment 
+# Lecture 
+
+## Managing Database in a CI/CD Environment 
 
 This week, we will consider how to write reliable integration tests when the goal is to manipulate a database.  Specifically, we will be addressing the following questions: 
 
