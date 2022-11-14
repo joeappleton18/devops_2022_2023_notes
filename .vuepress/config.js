@@ -23,7 +23,10 @@ module.exports = {
           "/side-tutorials/1.creating-a-next-and-tail-wind-application.md",
           "/side-tutorials/2.react-state.md",
           "/side-tutorials/3.connecting-to-a-database.md",
-          "/side-tutorials/4.mutating-a-database.md"]
+          "/side-tutorials/4.mutating-a-database.md",
+          "/side-tutorials/5.authentication-and-wider-services"
+
+        ]
       },
 
       {
@@ -52,7 +55,15 @@ module.exports = {
 
         title: 'Week 6',
         children: ["/week-6/lecture", "/week-6/"]
+      },
+
+      {
+
+        title: 'Week 7',
+        children: ["/week-7/lecture"]
+
       }
+
     ]
   }
 }
