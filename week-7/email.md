@@ -13,7 +13,7 @@ The latest version of our room finder application now has authentication; this r
 3. How do we facilitate third-party providers, such as Cloudinary, across different environments?
 
 
-There is no lecture this week; instead, [you should make a start on the the latest side tutorial]())
+There is no lecture this week; instead, [you should make a start on the the latest side tutorial](https://joeappleton18.github.io/devops_2022_2023_notes/side-tutorials/5.authentication-and-wider-services.html)
 
 See you all in the practicals,
 
