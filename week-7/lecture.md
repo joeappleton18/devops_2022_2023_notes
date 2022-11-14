@@ -1,5 +1,5 @@
 
-# Week 7: Authentication Testing Strategies and Deployment
+# Lecture
 
 Boom, the latest version of our room finder application now has authentication (side tutorial to come soon on how to do this); this raises a few DevOps concerns that we will address this week:
 
