@@ -1,6 +1,8 @@
 
 # Week 7: Authentication Testing Strategies and Deployment
 
+<center> <img src="./next-auth.png"/> </center>
+
 ##  Solent, We Now Have Authentication! 
 
 Boom, the latest version of our room finder application now has authentication (side tutorial to come soon on how to do this); this raises a few DevOps concerns that we will address this week:
@@ -31,7 +33,13 @@ Boom, the latest version of our room finder application now has authentication (
 - [You need a Cloudinary account](https://cloudinary.com/)
 - [You need a GitHub account](https://www.github.com)
 
-## TASK 0: Get the Starter Application
+::: warning TASK 0
+
+Lecturer to give an overview of the latest version of the Room Finder
+
+:::
+
+## TASK 0.1: Get the Starter Application
 
 In your command line shell, run:
 
@@ -39,6 +47,20 @@ In your command line shell, run:
 git clone --branch week-7-starter-code  https://github.com/joeappleton18/solent-room-finder.git week-7
 
 ```
+
+::: tip
+
+**experimental fix**
+
+Are the NPM modules taking too long to install? Instead of cloning the above version of our room finder application, try this version:
+
+```bash
+git clone --branch week-7-starter-code_with_node_modules  https://github.com/joeappleton18/solent-room-finder.git week-7
+```
+The above version has the node modules stored in the repository.
+
+:::
+
 
 As discussed above, I am a fan of delegating functionality to third-party providers. The Room Finder is currently using: 
 
@@ -179,6 +201,58 @@ env:
 ```
 >> `.github/workflows/cypress.yaml`
 
-## Further Reading 
+
+## Task 1.1 (Advanced)
+
+::: warning TASK 1.1 (Advanced)
+
+Feeling ambitious, can you figure out how to mock Next Auth? Yes, I said above this is not worth doing:  this still holds; however, as a pure learning task it's appealing.
+
+:::
 
 
+::: tip What about testing our image uploader?
+:star:
+
+We are using Cloudinary to provide our image uploads and manipulations. We need to trust that this multi-billion dollar company have tested their code base. In general, I don't test the functionality of third-party service providers. 
+
+:::
+
+## It's Time To Deploy!
+
+OMG, our application is ready to be deployed! Next, the week will consider the basics of deployment. Next week, we will look at the nitty-gritty of staging, development, and production environments. 
+
+I am not one to boast; however, check this out (https://solent-room-finder.vercel.app/). Yes, it's a deployed version of our Room Finding Application. 
+
+## Vercel 
+
+I recommend using Vercel as your hosting option. Apart from Cypress, it's one of the most amazing pieces of technology I've seen recently. This week, I want you to  work independently to work out how to host your own version of the room finding application. 
+
+## Task 2: Deploying our application 
+
+Deploying is straight forward: most of the time! First, you need to make sure that your application is hosted in a GitHub repository and has a main branch. To do this you will need run the following commands:
+
+- git remote remove origin 
+- git remote add `<your remote repo>`
+- git checkout -b "main"
+- git push origin main
+
+Next, create an account with [vercel.com](vercel.com) and:
+  - Create a new project 
+  - When prompted select "Import Git Repository"
+  - Find the room finder repository in the list and select Import. 
+
+Next will try and build your application; however, we need to set up our environment variables. Set the following variables from your project's settings section:
+
+- `MONGODB_URI`  - `mongodb+srv://<username>:<password>@cluster0.x08wt.mongodb.net/rooms-production?retryWrites=true&w=majority`
+- `NEXTAUTH_URL` - should be your application's URL (e.g. - `https://solent-room-finder.vercel.app`)
+- `NEXTAUTH_SECRET` - just put some random letters in here
+- `NEXT_PUBLIC_CLOUDINARY_PRESET` - same as development 
+- `NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME` - same as development
+
+Set up a new GitHub OAuth application for your newly created domain and add the:
+
+- `GITHUB_SECRET` 
+- `GITHUB_ID`
+
+Finally, re-deploy your application from the Vercel dash! If all has gone well, your application should be deployed!

@@ -30,37 +30,62 @@ module.exports = {
       },
 
       {
-        title: 'Week 1',
+        title: 'Week 1: Introduction to DevOps',
         children: ["/week-1/lecture", "/week-1/"]
       },
       {
-        title: 'Week 2',
+        title: 'Week 2: Static Code Analysis (1)',
         children: ["/week-2/lecture", "/week-2/"]
       },
       {
-        title: 'Week 3',
+        title: 'Week 3: Static Code Analysis (2)',
         children: ["/week-3/lecture", "/week-3/"]
       },
       {
 
-        title: 'Week 4',
+        title: 'Week 4: Component Driven Development',
         children: ["/week-4/lecture", "/week-4/"]
       },
       {
 
-        title: 'Week 5',
+        title: 'Week 5: Testing',
         children: ["/week-5/lecture", "/week-5/"]
       },
       {
 
-        title: 'Week 6',
+        title: 'Week 6: Database Testing',
         children: ["/week-6/lecture", "/week-6/"]
       },
 
       {
 
-        title: 'Week 7',
-        children: ["/week-7/lecture"]
+        title: 'Week 7: Authentication Testing Strategies and Deployment',
+        children: ["/week-7/lecture", "/week-7/"]
+
+      },
+      {
+
+        title: 'Week 8: CD Strategies',
+
+      },
+      {
+
+        title: 'Week 9: Unit Testing',
+
+      },
+      {
+
+        title: 'Week 10: Monitoring and Logging',
+
+      },
+      {
+
+        title: 'Week 10: Module Wrap Up (assessment support)',
+
+      },
+      {
+
+        title: 'Week 10: Module Wrap Up (assessment support)',
 
       }
 
