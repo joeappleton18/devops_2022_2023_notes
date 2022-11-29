@@ -58,7 +58,6 @@ module.exports = {
       },
 
       {
-        collapsable: false,
         title: 'Week 7: Authentication Testing Strategies and Deployment',
         children: ["/week-7/lecture", "/week-7/"]
 
@@ -70,8 +69,9 @@ module.exports = {
       },
       {
 
+        collapsable: false,
         title: 'Week 9: Unit Testing',
-
+        children: ["/week-9/"]
       },
       {
 
