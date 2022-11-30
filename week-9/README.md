@@ -93,7 +93,7 @@ npm install @testing-library/jest-dom @testing-library/react @testing-library/us
 
 You may be thinking, that's a lot of dependencies, and you'd be right. Unlike Cypress, react testing library does not act like a robot interacting with our application. In contrast, it integrates with our code base. Above, we installed, react testing library and some types (for type script support). Further, we added Jest to run the tests. React Testing Library and [Jest](https://jestjs.io/) go hand in hand.
 
-Next, we need configure our application. Create the following files in the route of your room finder project: `jest.config.js` and `jest.setup.ts`. Add the following code to these newly created files (no need to fully understand this code):
+, Next, we need configure our application. Create the following files in the route of your room finder project: `jest.config.js`, `setupTests.ts` and `jest.setup.ts`. Add the following code to these newly created files (no need to fully understand this code):
 
 ```js
 const nextJest = require("next/jest")
@@ -111,8 +111,6 @@ const customJestConfig = {
 
 // createJestConfig is exported this way to ensure that next/jest can load the Next.js config which is async
 module.exports = createJestConfig(customJestConfig)
-// this fixes some module issues 
-export {}
 ```
 >> `jest.config.js`
 
@@ -121,6 +119,11 @@ export {}
 import "@testing-library/jest-dom/extend-expect";
 ```
 >> `jest.setup.ts`
+
+```js
+import "@testing-library/jest-dom";
+```
+>> `setupTests.ts`
 
 Next, we need update `.eslintrc.json` to support linting for our tests:
 
@@ -143,11 +146,10 @@ Next, we need update `.eslintrc.json` to support linting for our tests:
   ]
 }
 ```
->> `.eslintrc.json`
+>> `.eslintrc.json`. [It may be easier to copy over this file with the contents of the week 9 solution](https://github.com/joeappleton18/solent-room-finder/blob/week-9-solutions/.eslintrc.json)
 
 
 Finally, we need to set up a script in our `package.json` file to run our tests:
-
 ```json
 {
 	...
