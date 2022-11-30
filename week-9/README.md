@@ -249,13 +249,54 @@ If all has gone well, you should see the above prompt in your terminal. The grea
 
 Above, you can see we are operating similarly to Cypress. However, the fundamental difference is we can now test units of code in isolation. Furthermore, we can do what's known as mocking. Mocking is used in unit tests to replace the return value of a class method or function. Notice on line 33, we set up a mock function: `const handleClickMock = jest.fn();`. This mock is sometimes known as a spy as it tracks how many times it has been and how it's been called. We can then run assertions against this information: `expect(handleClickMock.mock.calls.length).toBe(1);`. In the case of this test, we assert that clicking the button invokes the callback method we have passed in. 
 
-# Task 2
+## Task 2
 
 Can you implement the `Button` test above. Further, can you write tests for the alert and bread crumb component.  
 
-# Task 3
+## Task 3
 
+Let's consider a slightly more complex example:  `src/components/RoomForm.tsx`
 
+1. First things first, you'll notice that `src/components/RoomForm.tsx` communicates with 
+our `src/hooks/useNextAuth.ts`. When we run our tests, the testing library sets our  `process.env.NODE_ENV` to test. Like we do with our Cypress test, we will disable auth for testing. Update `src/hooks/useNextAuth.ts`:
 
+```js
+...
 
-# Task 4
+if (process.env.NEXT_PUBLIC_TESTING || process.env.NODE_ENV === "test") {
+  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+  //@ts-ignore
+  session = () => ({data: {session: true, user: {id: 1}}});
+}
+...
+
+```
+>> `src/hooks/useNextAuth.ts`
+
+2. Now that's out the way see if you can work out how to test:
+
+  1. That we can set a custom button label (this is pretty straight froward)
+  1. Allows a Room to be updated:
+    
+    - you'll need to set up spy `const handleClick = jest.fn();`
+    - set up a mock room to pass into the form:
+    ```js
+    const room = {
+      number: "208",
+      building: "HC",
+      capacity: 10,
+      type: {code: "pc", name: "PC Lab"},
+      photos: [],
+};
+
+```
+>> A mock room to pass into our component
+
+  1. You can now think about rendering the `<RoomForm/>`
+     ```
+     render(
+      <RoomForm onSubmit={handleClick} values={room} label="Update Room" />
+    );
+    
+     ``` 
+   1. Figure out how to update a value in the form, submit the form, and check that the `handleClick` mock is called with the updated value. [You should work out how to use the toHaveBeenCalledWith](https://jestjs.io/docs/expect#tohavebeencalledwitharg1-arg2-)
