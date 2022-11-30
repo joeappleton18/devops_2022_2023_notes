@@ -93,7 +93,7 @@ npm install @testing-library/jest-dom @testing-library/react @testing-library/us
 
 You may be thinking, that's a lot of dependencies, and you'd be right. Unlike Cypress, react testing library does not act like a robot interacting with our application. In contrast, it integrates with our code base. Above, we installed, react testing library and some types (for type script support). Further, we added Jest to run the tests. React Testing Library and [Jest](https://jestjs.io/) go hand in hand.
 
-, Next, we need configure our application. Create the following files in the route of your room finder project: `jest.config.js`, `setupTests.ts` and `jest.setup.ts`. Add the following code to these newly created files (no need to fully understand this code):
+, Next, we need configure our application. Create the following files in the route of your room finder project:`boostrapTests.js`, `jest.config.js`, `setupTests.ts` and `jest.setup.ts`. Add the following code to these newly created files (no need to fully understand this code):
 
 ```js
 const nextJest = require("next/jest")
@@ -125,6 +125,12 @@ import "@testing-library/jest-dom";
 ```
 >> `setupTests.ts`
 
+
+```js
+import "@testing-library/jest-dom";
+```
+>> `bootstrapTests.ts`
+
 Next, we need update `.eslintrc.json` to support linting for our tests:
 
 ```js
@@ -148,6 +154,19 @@ Next, we need update `.eslintrc.json` to support linting for our tests:
 ```
 >> `.eslintrc.json`. [It may be easier to copy over this file with the contents of the week 9 solution](https://github.com/joeappleton18/solent-room-finder/blob/week-9-solutions/.eslintrc.json)
 
+Next, we need to make the testing library's types available to our wider program. Within `tsconfig.json` extend your 'include' array to:
+
+```
+...
+"include": [
+    ""bootstrapTests.ts",
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx"
+  ]
+...
+```
+>> tsconfig.json
 
 Finally, we need to set up a script in our `package.json` file to run our tests:
 ```json
@@ -161,7 +180,6 @@ Finally, we need to set up a script in our `package.json` file to run our tests:
 
 	 ...
 }
-
 
 ```
 >> `package.json` : update the scripts section 
@@ -224,17 +242,20 @@ it("handles a click event", () => {
 You should now be able to run your test: `npm run  test:unit`
 
 
+![](./tests-passed.png)
+>> tests running 
+
+If all has gone well, you should see the above prompt in your terminal. The greate thing about unit tests is we can run them continually in the background. 
+
 Above, you can see we are operating similarly to Cypress. However, the fundamental difference is we can now test units of code in isolation. Furthermore, we can do what's known as mocking. Mocking is used in unit tests to replace the return value of a class method or function. Notice on line 33, we set up a mock function: `const handleClickMock = jest.fn();`. This mock is sometimes known as a spy as it tracks how many times it has been and how it's been called. We can then run assertions against this information: `expect(handleClickMock.mock.calls.length).toBe(1);`. In the case of this test, we assert that clicking the button invokes the callback method we have passed in. 
 
 # Task 2
 
-Can you implement the `Button` test above. Further, can you write a test for the 
+Can you implement the `Button` test above. Further, can you write tests for the alert and bread crumb component.  
 
 # Task 3
 
-`<Alert>` component, you should test that tests:
 
-- the correct text is set 
-- the alert fades out when we click the `x` icon. 
+
 
 # Task 4

@@ -80,15 +80,10 @@ module.exports = {
       },
       {
 
-        title: 'Week 10: Module Wrap Up (assessment support)',
-
-      },
-      {
-
-        title: 'Week 10: Module Wrap Up (assessment support)',
+        title: 'Week 11: Module Wrap Up (assessment support)',
 
       }
-
+      
     ]
   }
 }
