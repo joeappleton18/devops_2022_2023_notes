@@ -276,11 +276,12 @@ if (process.env.NEXT_PUBLIC_TESTING || process.env.NODE_ENV === "test") {
 2. Now that's out the way see if you can work out how to test:
 
   1. That we can set a custom button label (this is pretty straight froward)
-  1. Allows a Room to be updated:
+  1. The form allows a Room to be updated:
     
     - you'll need to set up spy `const handleClick = jest.fn();`
     - set up a mock room to pass into the form:
-    ```js
+
+  ```js
     const room = {
       number: "208",
       building: "HC",
@@ -292,11 +293,15 @@ if (process.env.NEXT_PUBLIC_TESTING || process.env.NODE_ENV === "test") {
 ```
 >> A mock room to pass into our component
 
-  1. You can now think about rendering the `<RoomForm/>`
-     ```
-     render(
-      <RoomForm onSubmit={handleClick} values={room} label="Update Room" />
-    );
+- You can now think about rendering the `<RoomForm/>`
     
-     ``` 
-   1. Figure out how to update a value in the form, submit the form, and check that the `handleClick` mock is called with the updated value. [You should work out how to use the toHaveBeenCalledWith](https://jestjs.io/docs/expect#tohavebeencalledwitharg1-arg2-)
+
+```
+
+ render(
+  <RoomForm onSubmit={handleClick} values={room} label="Update Room" />
+);
+
+ ``` 
+
+- Figure out how to update a value in the form, submit the form, and check that the `handleClick` mock is called with the updated value. [You should work out how to use the toHaveBeenCalledWith](https://jestjs.io/docs/expect#tohavebeencalledwitharg1-arg2-)
