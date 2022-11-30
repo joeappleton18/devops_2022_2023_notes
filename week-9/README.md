@@ -24,7 +24,7 @@ If you have a working version of the room finder with authentications, you don't
 In your command line shell, run:
 
 ```shell
-git clone --branch week-9-starter-code  https://github.com/joeappleton18/solent-room-finder.git week-7
+git clone --branch week-9-starter-code  https://github.com/joeappleton18/solent-room-finder.git week-9
 ```
 
 [Next, follow the setup steps from week 7](../week-7/#task-0-1-get-the-starter-application)
@@ -82,13 +82,14 @@ Question two is open to interpretation. Components rarely live in isolation; the
 
 Let's see if we can add some unit tests to our application. 
 
-## Task 1 : Installing the Testing Library 
+## Task 2 : Installing the React Testing Library 
 
 First we need to use NPM to install the react testing library. Run the following command in the root of your project:
 
 ```shell
 npm install @testing-library/jest-dom @testing-library/react @testing-library/user-event jest jest-environment-jsdom @types/testing-library__jest-dom  eslint-plugin-testing-library
 ```
+>> Make sure you copy the full string!
 
 You may be thinking, that's a lot of dependencies, and you'd be right. Unlike Cypress, react testing library does not act like a robot interacting with our application. In contrast, it integrates with our code base. Above, we installed, react testing library and some types (for type script support). Further, we added Jest to run the tests. React Testing Library and [Jest](https://jestjs.io/) go hand in hand.
 
@@ -110,28 +111,14 @@ const customJestConfig = {
 
 // createJestConfig is exported this way to ensure that next/jest can load the Next.js config which is async
 module.exports = createJestConfig(customJestConfig)
-
+// this fixes some module issues 
+export {}
 ```
 >> `jest.config.js`
 
 
 ```js
-const nextJest = require("next/jest")
-
-const createJestConfig = nextJest({
-	// Provide the path to your Next.js app to load next.config.js and .env files in your test environment
-	dir: "./",
-})
-
-// Add any custom config to be passed to Jest
-const customJestConfig = {
-	setupFilesAfterEnv: ["<rootDir>/jest.setup.ts"],
-	testEnvironment: "jest-environment-jsdom",
-}
-
-// createJestConfig is exported this way to ensure that next/jest can load the Next.js config which is async
-module.exports = createJestConfig(customJestConfig)
-
+import "@testing-library/jest-dom/extend-expect";
 ```
 >> `jest.setup.ts`
 
@@ -165,7 +152,9 @@ Finally, we need to set up a script in our `package.json` file to run our tests:
 {
 	...
 	 "scripts": {
+	  ...
 		"test:unit": "jest --watch"
+		...
 	 }
 
 	 ...
@@ -173,7 +162,7 @@ Finally, we need to set up a script in our `package.json` file to run our tests:
 
 
 ```
->> `package.json`
+>> `package.json` : update the scripts section 
 
 ## What to test
 
