@@ -96,6 +96,8 @@ You may be thinking, that's a lot of dependencies, and you'd be right. Unlike Cy
 , Next, we need configure our application. Create the following files in the route of your room finder project:`boostrapTests.js`, `jest.config.js`, `setupTests.ts` and `jest.setup.ts`. Add the following code to these newly created files (no need to fully understand this code):
 
 ```js
+
+// eslint-disable-next-line @typescript-eslint/no-var-require
 const nextJest = require("next/jest")
 
 const createJestConfig = nextJest({
@@ -183,6 +185,19 @@ Finally, we need to set up a script in our `package.json` file to run our tests:
 
 ```
 >> `package.json` : update the scripts section 
+
+
+
+::: tip Important Point
+:star:
+
+![](./reset_command.png)
+>> Running the reload command should get rid of those pesky red lines!
+
+You may get some squiggly TS warnings/errors in your testing files.  These are not run-time errors, and your tests will still run.  To fix these errors, assuming you are using VS code, press `CTRL/CMD Shift P` type and then run "reload window". 
+ 
+
+:::
 
 ## What to test
 
@@ -304,4 +319,19 @@ if (process.env.NEXT_PUBLIC_TESTING || process.env.NODE_ENV === "test") {
 
  ``` 
 
-- Figure out how to update a value in the form, submit the form, and check that the `handleClick` mock is called with the updated value. [You should work out how to use the toHaveBeenCalledWith](https://jestjs.io/docs/expect#tohavebeencalledwitharg1-arg2-)
+1. Figure out how to update a value in the form, submit the form, and check that the `handleClick` mock is called with the updated value. [You should work out how to use the toHaveBeenCalledWith](https://jestjs.io/docs/expect#tohavebeencalledwitharg1-arg2-)
+
+## Task 4: Integrating our Tests into the CI/CD Pipeline
+
+Currently, our unit tests run in the background, enhancing our developer workflow.
+
+
+We can now start using jest in our CI/CD environment. The first thing you may want to do is append the `npm run test:ci` to your git pre-commit hook. Add `npm run test:ci` to the bottom of your `.husky/pre-commit` file. Now, if you make a commitment, your tests will run. 
+
+Next, we can add `npm run test:ci`  to `.github/workflows/main.yaml` add the following lines to the end of this file:
+
+```
+	- name: Run Tests
+        	run: npm run test:ci
+```
+>>  `.github/workflows/main.yaml` 
