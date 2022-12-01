@@ -87,7 +87,7 @@ Let's see if we can add some unit tests to our application.
 First we need to use NPM to install the react testing library. Run the following command in the root of your project:
 
 ```shell
-npm install @testing-library/jest-dom @testing-library/react @testing-library/user-event jest jest-environment-jsdom @types/testing-library__jest-dom  eslint-plugin-testing-library
+npm install -D @testing-library/jest-dom @testing-library/react @testing-library/user-event jest jest-environment-jsdom @types/testing-library__jest-dom  eslint-plugin-testing-library
 ```
 
 > > Make sure you copy the full string!
@@ -297,9 +297,8 @@ if (process.env.NEXT_PUBLIC_TESTING || process.env.NODE_ENV === "test") {
 1. That we can set a custom button label (this is pretty straight froward)
 1. The form allows a Room to be updated:
 
-
-    - you'll need to set up spy `const handleClick = jest.fn();`
-    - set up a mock room to pass into the form:
+   - you'll need to set up spy `const handleClick = jest.fn();`
+   - set up a mock room to pass into the form:
 
 ```js
 const room = {
@@ -327,11 +326,15 @@ const room = {
 
 ## Task 4: Integrating our Tests into the CI/CD Pipeline
 
-Currently, our unit tests run in the background, enhancing our developer workflow.
+- Currently, our unit tests run in the background, enhancing our developer workflow.
 
-We can now start using jest in our CI/CD environment. The first thing you may want to do is append the `npm run test:ci` to your git pre-commit hook. Add `npm run test:ci` to the bottom of your `.husky/pre-commit` file. Now, if you make a commitment, your tests will run.
+- Add  `"test:ci": "jest --ci"` to the scripts section of your `package.json` file. This allows you to run the tests for the purposes of CI.
 
-Next, we can add `npm run test:ci` to `.github/workflows/main.yaml` add the following lines to the end of this file:
+- We can now start using jest in our CI/CD environment. The first thing you may want to do is append the `npm run test:ci` to your git pre-commit hook. Add `npm run test:ci` to the bottom of your `.husky/pre-commit` file. Now, if you make a commitment, your tests will run.
+
+
+
+- Next, we can add `npm run test:ci` to `.github/workflows/main.yaml` add the following lines to the end of this file:
 
 ```
 	- name: Run Tests
