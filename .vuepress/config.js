@@ -38,7 +38,6 @@ module.exports = {
         children: ["/week-2/lecture", "/week-2/"]
       },
       {
-        title: 'Week 3: Static Code Analysis (2)',
         children: ["/week-3/lecture", "/week-3/"]
       },
       {
@@ -69,14 +68,14 @@ module.exports = {
       },
       {
 
-        collapsable: false,
         title: 'Week 9: Unit Testing',
         children: ["/week-9/"]
       },
       {
 
+        collapsable: false,
         title: 'Week 10: Monitoring and Logging',
-
+        children: "/week-10/"
       },
       {
 
