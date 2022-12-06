@@ -76,7 +76,7 @@ module.exports = {
 
         collapsable: false,
         title: 'Week 10: Monitoring and Logging',
-        children:  ["/week-10/", "/week-10/lecture.md"]
+        children:  ["/week-10/lecture.md", "/week-10/" ]
       },
       {
 
