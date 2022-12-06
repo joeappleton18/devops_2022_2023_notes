@@ -4,9 +4,38 @@ We are nearly there! Recall, way back in week-1, I introduced the basic principl
 
 - Continuous Integration
 - Continuous Delivery/Deployment
-- Infrastructure as Code
+- Infrastructure as Code (beyond the scope of the module)
 - Monitoring and Logging
 - Communication and Collaboration
+
+This week we will consider Monitoring and Logging by addressing the following questions:
+
+- How can I monitor what is tested?
+- How can I log application events in a way that I can easily diagnose problems?
+- How can I understand how users are interacting with my application?
+
+## Lesson Dependencies 🔨
+
+- [You will need to ensure you have the version control tool Git installed](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
+  - You'll need to know the basic Git Commands (e.g., `checkout -b`, `push`, and `commit`)
+- While you can use any text editor for this session, I recommend that you install [VS Code](https://code.visualstudio.com/download)
+- You will need access to a MongDB database.
+  - You can install your own locally
+  - Use [AtlasDB](https://www.mongodb.com/atlas/database)
+- [You need a Cloudinary account](https://cloudinary.com/)
+- [You need a GitHub account](https://www.github.com)
+
+## TASK 0: Get the Starter Application
+
+If you have a working version of the room finder with authentications, you don't need to get a new version of the project. If not,
+
+In your command line shell, run:
+
+```shell
+git clone --branch week-10-starter-code  https://github.com/joeappleton18/solent-room-finder.git week-10
+```
+
+[Next, follow the setup steps from week 7](../week-7/#task-0-1-get-the-starter-application)
 
 
 ## What to Measure? 
