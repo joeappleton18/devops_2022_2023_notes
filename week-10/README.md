@@ -26,15 +26,148 @@ This week, I would like to quickly introduce a few methods to gain a better unde
 
 ## Code Coverage
 
-::: tip Definition Code Coverage
+
+::: tip DEFINITION
+:book: **Term**
 
 Code coverage is a measure of how much of your code is executed when running tests. It helps you determine how thoroughlyyour tests exercise your code, and helps you identify areas of your code that may not be fully tested. By ensuring that your tests have high code coverage, you can improve the quality and reliability of your software.
 
 :::
 
+Currently, we have two types of tests in our room-finder project: unit tests (using the react testing library running jest) and integration tests (running on Cypress). Let's consider how we can generate coverage reports for both of our testing scenarios:
+
+### Jest Code Coverage 
+
+To check code coverage using Jest, you need to use the --coverage flag when running your Jest tests. For example:
+
+```
+npx jest --coverage --collectCoverageFrom="./src/**"
+
+```
+
+Running the above command will generate a coverage report that looks something like this:
+
+![](./coverage_report.png)
 
 
-## Error Logging 
+Personally, I don't find the above coverage format that useful. A better approach is to generate a coverage report like this:
+   
 
+```
+npx jest --coverage --collectCoverageFrom="./src/**" --coverageD directory='coverage'
+
+```
+
+Now, you will see an interactive coverage report, in `/coverage/lcov-report/index.html` that resembles this:
+
+
+![](./interactive-coverage-report.png)
+
+>> A interactive coverage report; this would look much better in the appendix of your report!
+
+
+Hmm, 44 of 313 lines of code are tested: not great! We better look at our Cypress coverage report.
+
+
+### Cypress Code Coverage
+
+[According to the Cypress documentation, in order to generate a coverage report, we must first instrument our code.](https://docs.cypress.io/guides/tooling/code-coverage#Instrumenting-code). Code instrumentation provides us with information about the sections of code that are invoked when tests are run. Cypress is unopinionated about how we instrument our code. However, Istanbul is considered to be the industry standard JavaScript instrumentation tool. With this in mind, let's consider how to integrate Instanbul with Cypress.
+
+First, install the Cypress Coverage and Istanbul dependencies by running:
+
+```bash
+
+npm install -D  babel-plugin-istanbul @cypress/code-coverage
+
+
+```
+
+Next, create a `.babelrc` file in the root of your project, and add the following code:
+
+```js
+
+{
+	 "presets": ["next/babel"],
+	 "plugins": ["istanbul"]
+}
+
+```
+>> `.babelrc`
+
+We now need to update two of our cypress files: `cypress/support/e2e.js` and `cypress.config.ts`. Add the following code:
+
+```js
+// cypress/support/e2e.ts
+import '@cypress/code-coverage/support'
+```
+>>  `cypress/support/e2e.ts`
+
+```js
+// cypress.config.ts
+const { defineConfig } = require('cypress')
+
+module.exports = defineConfig({
+  // setupNodeEvents can be defined in either
+  // the e2e or component configuration
+  e2e: {
+    setupNodeEvents(on, config) {
+      require('@cypress/code-coverage/task')(on, config)
+      // include any other plugin code...
+      
+      // It's IMPORTANT to return the config object
+      // with any changed environment variables
+      return config
+    }
+  }
+})
+
+```
+
+>> `cypress.config.ts`
+
+Now if you run cypress (`npm run test` and then  `npm run cypress:run`), you should get an updated coverage report in: `/coverage/lcov-report/index.html`.  As you can see, our coverage is now around 85%, much better:
+
+![](./cypress-coverage.png)
+>> updated coverage report: notice how `@cypress-coverage` is more focused, meaning there are less lines of code analysed
+
+### Task 1 
+
+Using the notes above, set up test coverage in our room-finder application.
+
+
+
+## Logging 
+
+
+Currently, there is no way of knowing if our production application has crashed! As such, we need a  logging solution that helps us diagnose and monitor application issues. 
+
+[I recommend using Sentry](sentry.io).  Sentry is a platform that helps developers monitor and fixes errors in their applications in real time. It is often used to detect and report errors, as well as track the performance of an application and identify potential issues. This can help developers quickly identify and fix problems, ensuring that their applications are stable and running smoothly.
+
+Sentry's SDK hooks into your runtime environment and automatically reports errors, uncaught exceptions, and unhandled rejections as well as other types of errors depending on the platform.
+
+
+## Task 2: Configure Sentry in Your Room Finder Application
+
+
+Put simply, the Sentry documentation is excellent and walks you through the installation process. For this task, sign up to a [sentry.io](sentry.io) account and follow through the installation instructions for a Next.js application. 
+
+
+
+Once you have Sentry set up, you may want to add some further context to your errors. [See if you can figure out how to append the logged in user's details to the error](https://docs.sentry.io/platforms/javascript/guides/react/enriching-events/identify-user/)
 
 ## Analytics 
+
+Finally, I want to consider analytics. You should include some form of analytics solution in your assessment. Analytics allow you to understand how users are interacting with your web application. I recommend considering Google analytics Combined with HotJar.
+
+Google Analytics is a free web analytics service offered by Google that tracks and reports website traffic. 
+Hotjar is a tool that provides website and user analytics, as well as feedback and survey tools. It allows you to see how users are interacting with your website by visually representing their clicks, taps, and scrolling behaviour. This can help you identify problem areas and improve the overall user experience of your website. 
+
+https://mariestarck.com/add-google-analytics-to-your-next-js-application-in-5-easy-steps/
+
+## Task 3: Installing Analytics 
+
+Install analytics on our room finder application. I reccomend you use the following tutorials:
+
+[Google Analytics and HotJar Install](https://medium.com/@romansorin/using-hotjar-and-google-analytics-with-next-js-to-track-behavior-a2283d659767)
+
+## THE END  

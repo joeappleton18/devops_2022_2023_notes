@@ -38,10 +38,11 @@ module.exports = {
         children: ["/week-2/lecture", "/week-2/"]
       },
       {
+        title: "Week 3: Static Code Analysis (ii)",
         children: ["/week-3/lecture", "/week-3/"]
       },
       {
-
+        
         title: 'Week 4: Component Driven Development',
         children: ["/week-4/lecture", "/week-4/"]
       },
@@ -75,7 +76,7 @@ module.exports = {
 
         collapsable: false,
         title: 'Week 10: Monitoring and Logging',
-        children: "/week-10/"
+        children:  ["/week-10/"]
       },
       {
 

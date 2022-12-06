@@ -12,5 +12,9 @@
   },
   "devDependencies": {
     "vuepress": "^1.9.7"
+  },
+  "dependencies": {
+    "@sentry/react": "^7.23.0",
+    "@sentry/tracing": "^7.23.0"
   }
 }
