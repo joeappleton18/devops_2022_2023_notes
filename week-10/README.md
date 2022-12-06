@@ -178,7 +178,7 @@ Sentry's SDK hooks into your runtime environment and automatically reports error
 ## Task 2: Configure Sentry in Your Room Finder Application
 
 
-Put simply, the Sentry documentation is excellent and walks you through the installation process. For this task, sign up to a [sentry.io](sentry.io) account and follow through the installation instructions for a Next.js application. 
+Put simply, the Sentry documentation is excellent and walks you through the installation process. For this task, sign up to a [sentry.io](http://sentry.io) account and follow through the installation instructions for a Next.js application. 
 
 
 
@@ -191,11 +191,9 @@ Finally, I want to consider analytics. You should include some form of analytics
 Google Analytics is a free web analytics service offered by Google that tracks and reports website traffic. 
 Hotjar is a tool that provides website and user analytics, as well as feedback and survey tools. It allows you to see how users are interacting with your website by visually representing their clicks, taps, and scrolling behaviour. This can help you identify problem areas and improve the overall user experience of your website. 
 
-https://mariestarck.com/add-google-analytics-to-your-next-js-application-in-5-easy-steps/
-
 ## Task 3: Installing Analytics 
 
-Install analytics on our room finder application. I reccomend you use the following tutorials:
+Install analytics on our room finder application. I recommend you use the following tutorial:
 
 [Google Analytics and HotJar Install](https://medium.com/@romansorin/using-hotjar-and-google-analytics-with-next-js-to-track-behavior-a2283d659767)
 
